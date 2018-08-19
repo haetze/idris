@@ -26,10 +26,8 @@ h : Word n state EsumOsum.delta ->AccRun n state Esum EsumOsum.delta_minus_one
 h Eps = Final Esum
 h (Cons w ws) = BackStep w $ h ws
 
-delta_eq : (x : Nat) -> (state : State) -> EsumOsum.delta x state = EsumOsum.delta x state
-delta_eq x state = Refl
 
 equal : (x : Nat) -> (state: State) -> EsumOsum.delta_minus_one x state = EsumOsum.delta x state
-equal x state = delta_eq x state
+equal x state = Refl
 
 
